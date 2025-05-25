@@ -41,7 +41,7 @@ class AhorcadoGUI:
         self.root.update_idletasks()
         x = (self.root.winfo_screenwidth() // 2) - (800 // 2)
         y = (self.root.winfo_screenheight() // 2) - (700 // 2)
-        self.root.geometry(f"800x700+{x}+{y}")
+        self.root.geometry(f"1200x700+{x}+{y}")
     
     def create_fonts(self):
         """Crear fuentes Press Start 2P"""
