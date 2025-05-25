@@ -20,5 +20,5 @@ class Letra:
         :param otra_letra: La letra para comparar.
         :return: True si las letras son iguales sin importar mayúsculas/minúsculas, False de lo contrario.
         """
-        return self.letra == otra_letra.letra #se compara ls letras en min paara ignorar may/min
+        return self.letra.lower() == otra_letra.letra.lower() #se compara ls letras en min paara ignorar may/min
     

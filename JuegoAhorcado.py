@@ -1,8 +1,8 @@
 import random
 from enum import Enum
 from typing import List
-from Palabra import Palabra
-from Letra import Letra
+from src.Palabra import Palabra
+from src.Letra import Letra
 
 
 class Estado(Enum):
@@ -96,7 +96,7 @@ class JuegoAhorcado:
         if self.palabra_actual is None :
             return []  #lista con las letras adivinadas o _ para las que no se han adivinado
         else:
-            return self.palabra_actual.dar_ocurrencias()  #letras visibles de la pálabra actual
+            return self.palabra_actual.dar_ocurrencias(self.jugadas)  #letras visibles de la pálabra actual
 
 
     def dar_estado(self) -> Estado:

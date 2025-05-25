@@ -1,5 +1,5 @@
 from typing import List
-from Letra import Letra
+from src.Letra import Letra
 
 class Palabra:
     """
@@ -38,7 +38,7 @@ class Palabra:
         :return: True si está la letra, False en caso contrario.
         """
         for letra in lista_letras:
-            if letra == p_letra:
+            if letra.es_igual (p_letra):
                 return True  #la letra  se encontró en la lista
         return False #la letra no se encontró en la lista
 
@@ -49,7 +49,10 @@ class Palabra:
         :param p_letra: Letra a consultar.
         :return: True si la letra está en la palabra, False de lo contrario.
         """
-        return self._buscar_letra_en_lista(p_letra, self.letras)  #se busca la letra en la lista de letras de la palabra 
+        for letra in self.letras:
+            if letra.es_igual(p_letra):  # Usamos el método es_igual de Letra
+                return True
+        return False
 
 
     def dar_ocurrencias(self, p_jugadas: List[Letra]) -> List[Letra]:
