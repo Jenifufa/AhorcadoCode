@@ -44,20 +44,32 @@ class AhorcadoGUI:
         self.root.geometry(f"800x700+{x}+{y}")
     
     def create_fonts(self):
-        """Crear fuentes pixel art"""
+        """Crear fuentes Press Start 2P"""
         try:
-            self.pixel_font_large = font.Font(family="Courier New", size=24, weight="bold")
-            self.pixel_font_medium = font.Font(family="Courier New", size=16, weight="bold")
-            self.pixel_font_small = font.Font(family="Courier New", size=12, weight="bold")
-            self.pixel_font_tiny = font.Font(family="Courier New", size=10, weight="bold")
-            self.pixel_font_mini = font.Font(family="Courier New", size=8)  # Nueva fuente más pequeña
-        except:
-            # Fallback si no hay Courier New
-            self.pixel_font_large = font.Font(family="monospace", size=24, weight="bold")
-            self.pixel_font_medium = font.Font(family="monospace", size=16, weight="bold")
-            self.pixel_font_small = font.Font(family="monospace", size=12, weight="bold")
-            self.pixel_font_tiny = font.Font(family="monospace", size=10, weight="bold")
-            self.pixel_font_mini = font.Font(family="monospace", size=8)  # Nueva fuente más pequeña
+            # Intentar cargar la fuente Press Start 2P
+            self.pixel_font_large = font.Font(family="Press Start 2P", size=20)
+            self.pixel_font_medium = font.Font(family="Press Start 2P", size=12)
+            self.pixel_font_small = font.Font(family="Press Start 2P", size=10)
+            self.pixel_font_tiny = font.Font(family="Press Start 2P", size=8)
+            self.pixel_font_mini = font.Font(family="Press Start 2P", size=6)
+        except tk.TclError:
+            # Si Press Start 2P no está disponible, usar alternativas pixeladas
+            try:
+                # Alternativa 1: Courier New (monoespaciada)
+                self.pixel_font_large = font.Font(family="Courier New", size=24, weight="bold")
+                self.pixel_font_medium = font.Font(family="Courier New", size=16, weight="bold")
+                self.pixel_font_small = font.Font(family="Courier New", size=12, weight="bold")
+                self.pixel_font_tiny = font.Font(family="Courier New", size=10, weight="bold")
+                self.pixel_font_mini = font.Font(family="Courier New", size=8)
+                print("Usando Courier New como alternativa a Press Start 2P")
+            except:
+                # Alternativa 2: Terminal/monospace
+                self.pixel_font_large = font.Font(family="monospace", size=24, weight="bold")
+                self.pixel_font_medium = font.Font(family="monospace", size=16, weight="bold")
+                self.pixel_font_small = font.Font(family="monospace", size=12, weight="bold")
+                self.pixel_font_tiny = font.Font(family="monospace", size=10, weight="bold")
+                self.pixel_font_mini = font.Font(family="monospace", size=8)
+                print("Usando monospace como alternativa a Press Start 2P")
     
     def create_widgets(self):
         """Crear todos los widgets de la interfaz"""
