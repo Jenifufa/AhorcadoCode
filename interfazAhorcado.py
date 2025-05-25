@@ -377,12 +377,12 @@ class AhorcadoGUI:
             ])
             
             # Mostrar mensaje indicando si la palabra ya había sido usada
-            mensaje = f"¡Oh no! Has sido ahorcado.\n\nLa palabra era: {palabra_completa.upper()}"
+            mensaje = f"¡Oh no! Has sido AHORCADO.\n\nLa palabra era: {palabra_completa.upper()}"
             if self.palabra_actual in self.palabras_usadas:
                 mensaje += "\n(Esta palabra ya había sido jugada anteriormente)"
             mensaje += "\n\n¿Quieres jugar otra vez?"
             
-            messagebox.showinfo("Game Over 💀", mensaje)
+            messagebox.showinfo("GAME OVER 💀", mensaje)
             self.deshabilitar_teclado()
     
     def deshabilitar_teclado(self):
