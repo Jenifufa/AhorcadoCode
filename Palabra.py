@@ -8,7 +8,6 @@ class Palabra:
     """
 
     ### constructor
-    
     def __init__(self, p_palabra: str):
         self.letras = []
         for caracter in p_palabra :
