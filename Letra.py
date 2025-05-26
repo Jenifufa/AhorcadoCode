@@ -1,7 +1,6 @@
 class Letra:
 
     ### constructor
-    
     def __init__(self, p_letra: str):
         self.letra = p_letra.lower() #la letra se guarda e minuscula para facilitar conmparaciones
 
