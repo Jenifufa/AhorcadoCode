@@ -7,12 +7,17 @@ class Palabra:
     letras : lista [Letra] - lista de objetos Letra que forman la plabra.
     """
 
+    ### constructor
+    
     def __init__(self, p_palabra: str):
         self.letras = []
         for caracter in p_palabra :
             self.letras.append(Letra(caracter))
 
 
+    
+    ### métodos
+    
     __method__ = "esta_completa"
     __params__ = "p_jugadas"
     __return__ = "bool"
