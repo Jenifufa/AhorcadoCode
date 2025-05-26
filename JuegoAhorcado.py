@@ -15,6 +15,7 @@ class JuegoAhorcado:
     TOTAL_PALABRAS = 12
     MAX_INTENTOS = 6
 
+    ### constructor
     def __init__(self):
         self.diccionario: List[Palabra] = [
             Palabra("algoritmo"),
@@ -36,7 +37,8 @@ class JuegoAhorcado:
         self.intentos_disponibles = self.MAX_INTENTOS  # Empezamos con el máximo de intentos
         self.estado = Estado.NO_INICIADO  # El juego no ha comenzado
 
-        
+    ### métodos
+    
     __method__= "iniciar_juego"
     __params__= "None"
     __return__= "None"
