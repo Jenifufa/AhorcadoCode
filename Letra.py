@@ -50,6 +50,7 @@ class JuegoAhorcado:
         self.intentos_disponibles = self.MAX_INTENTOS  # Restauracion los intentos
         self.estado = Estado.JUGANDO  # Se cambia el estado a jugando
 
+    
     __method__= "jugar_letra"
     __params__= "letra"
     __return__= "bool"
@@ -78,6 +79,7 @@ class JuegoAhorcado:
                 self.estado = Estado.AHORCADO
             return False
 
+    
     __method__= "dar_palabra_actual"
     __params__= "None"
     __return__= "Palabra"
@@ -95,6 +97,7 @@ class JuegoAhorcado:
         else:
             return None
 
+    
     __method__= "dar_intentos_disponibles"
     __params__= "None"
     __return__= "intentos_disponibles"
@@ -102,6 +105,7 @@ class JuegoAhorcado:
     def dar_intentos_disponibles(self) -> int:
         return self.intentos_disponibles
 
+    
     __method__= "dar_jugadas"
     __params__= "None"
     __return__= "jugadas"
@@ -109,6 +113,8 @@ class JuegoAhorcado:
     def dar_jugadas(self) -> List[Letra]:
         return self.jugadas
 
+
+    
     __method__= "dar_ocurrencias"
     __params__= "None"
     __return__= "ocurrencias"
@@ -119,6 +125,7 @@ class JuegoAhorcado:
         else:
             return self.palabra_actual.dar_ocurrencias(self.jugadas)  #letras visibles de la pálabra actual
 
+    
     __method__= "dar_estado"
     __params__= "None"
     __return__= "estado"
@@ -126,6 +133,7 @@ class JuegoAhorcado:
     def dar_estado(self) -> Estado:
         return self.estado
 
+    
     __method__= "letra_utilizada"
     __params__= "letra"
     __return__= "bool"
@@ -136,8 +144,10 @@ class JuegoAhorcado:
                 return True #la letra ya fue utilizada
         return False #la letra ha sido utilizada
 
+    
     def metodo1(self) -> str:
         return "Respuesta 1" 
 
+    
     def metodo2(self) -> str:
         return "Respuesta 2" 
