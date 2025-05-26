@@ -37,7 +37,10 @@ class JuegoAhorcado:
         self.estado = Estado.NO_INICIADO  # El juego no ha comenzado
 
         
-
+    __method__= "iniciar_juego"
+    __params__= "None"
+    __return__= "None"
+    __description__= "Método que sirve para iniciar el juego con una palabra aleatoria del diccionario"
     def iniciar_juego(self):
         indice_aleatorio = random.randint(0, self.TOTAL_PALABRAS - 1) # primero, se selecciona una palabra aleatoriamente del diccionario
         self.palabra_actual = self.diccionario[indice_aleatorio]
@@ -47,7 +50,10 @@ class JuegoAhorcado:
         self.intentos_disponibles = self.MAX_INTENTOS  # Restauracion los intentos
         self.estado = Estado.JUGANDO  # Se cambia el estado a jugando
 
-
+    __method__= "jugar_letra"
+    __params__= "letra"
+    __return__= "bool"
+    __description__= "Método que sirve para jugar una letra en el juego, si la letra está en la palabra, se agrega a las jugadas y se verifica si el jugador ha ganado, si no, se resta un intento y se verifica si el jugador ha perdido"
     def jugar_letra(self, letra: Letra) -> bool:
     
         if self.estado != Estado.JUGANDO:  # Solo se puede jugar si el juego está en estado JUGANDO
@@ -72,37 +78,58 @@ class JuegoAhorcado:
                 self.estado = Estado.AHORCADO
             return False
 
-
+    __method__= "dar_palabra_actual"
+    __params__= "None"
+    __return__= "Palabra"
+    __description__= "Método que sirve para dar la palabra actual del juego"
     def dar_palabra_actual(self) -> Palabra:
         return self.palabra_actual
 
-
+    __method__= "dar_palabra"
+    __params__= "posicion"
+    __return__= "Palabra"
+    __description__= "Método que sirve para dar una palabra del diccionario"
     def dar_palabra(self, posicion: int) -> Palabra:
         if 0 <= posicion < len(self.diccionario):
             return self.diccionario[posicion]
         else:
             return None
 
-
+    __method__= "dar_intentos_disponibles"
+    __params__= "None"
+    __return__= "intentos_disponibles"
+    __description__= "Método que sirve para dar los intentos disponibles del juego"
     def dar_intentos_disponibles(self) -> int:
         return self.intentos_disponibles
 
-
+    __method__= "dar_jugadas"
+    __params__= "None"
+    __return__= "jugadas"
+    __description__= "Método que sirve para dar las jugadas realizadas en el juego"
     def dar_jugadas(self) -> List[Letra]:
         return self.jugadas
 
-
+    __method__= "dar_ocurrencias"
+    __params__= "None"
+    __return__= "ocurrencias"
+    __description__= "Método que sirve para dar las letras visibles de la palabra actual, las letras adivinadas o _ para las que no se han adivinado"
     def dar_ocurrencias(self) -> List[Letra]:
         if self.palabra_actual is None :
             return []  #lista con las letras adivinadas o _ para las que no se han adivinado
         else:
             return self.palabra_actual.dar_ocurrencias(self.jugadas)  #letras visibles de la pálabra actual
 
-
+    __method__= "dar_estado"
+    __params__= "None"
+    __return__= "estado"
+    __description__= "Método que sirve para dar el estado del juego"
     def dar_estado(self) -> Estado:
         return self.estado
 
-
+    __method__= "letra_utilizada"
+    __params__= "letra"
+    __return__= "bool"
+    __description__= "Método que sirve para verificar si una letra ya ha sido utilizada en el juego"
     def letra_utilizada(self, letra: Letra) -> bool:
         for jugada in self.jugadas :
             if jugada == letra:
