@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+__author__ = "Jenifer U. C. Andres B. C. , Zara C. B."
+__version__ = "1.0.0"
+__license__ = "GPL"
+__email__ = "jenifer.urbano@campusucc.edu.co"
+
 """
 Juego del Ahorcado - Versión por Consola
 """
