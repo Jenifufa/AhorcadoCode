@@ -117,7 +117,7 @@ class JuegoAhorcado:
     __description__= "Método que sirve para dar las letras visibles de la palabra actual, las letras adivinadas o _ para las que no se han adivinado"
     def dar_ocurrencias(self) -> List[Letra]:
         if self.palabra_actual is None :
-            return []  #lista con las letras adivinadas o _ para las que no se han adivinado
+            return []  
         else:
             return self.palabra_actual.dar_ocurrencias(self.jugadas)  #letras visibles de la pálabra actual
 
