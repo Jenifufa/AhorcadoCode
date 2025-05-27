@@ -282,6 +282,14 @@ class AhorcadoGUI:
             # Piernas
             self.canvas.create_line(197, 180, 170, 210, fill=line_color, width=line_width)
             self.canvas.create_line(197, 180, 225, 210, fill=line_color, width=line_width)
+
+            # Ojos en forma de 'X' al perder
+            # Ojo izquierdo
+            self.canvas.create_line(188, 100, 198, 110, fill=line_color, width=line_width)
+            self.canvas.create_line(198, 100, 188, 110, fill=line_color, width=line_width)
+            # Ojo derecho
+            self.canvas.create_line(202, 100, 212, 110, fill=line_color, width=line_width)
+            self.canvas.create_line(212, 100, 202, 110, fill=line_color, width=line_width)
     
     def nuevo_juego(self):
         """Iniciar un nuevo juego"""
