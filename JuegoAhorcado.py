@@ -136,7 +136,7 @@ class JuegoAhorcado:
         for jugada in self.jugadas :
             if jugada == letra:
                 return True #la letra ya fue utilizada
-        return False #la letra ha sido utilizada
+        return False #la letra NO ha sido utilizada
 
     def metodo1(self) -> str:
         return "Respuesta 1" 
